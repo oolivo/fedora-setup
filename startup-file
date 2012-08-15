@@ -1,0 +1,36 @@
+#/bin/bash
+sudo yum install eclipse
+sudo yum install python
+sudo yum install django
+sudo yum install Django
+sudo yum install xmonad
+sudo yum install xmobar
+sudo yum install gcc
+sudo yum install dmenu
+sudo yum install system-switch-displaymanager
+sudo yum install kdm
+sudo yum install gnome-power-manager
+sudo yum install vim
+sudo yum install feh
+sudo yum install git
+git clone https://github.com/oolivo/My-work.git
+sudo yum install mongodb
+sudo yum install mongodb-server
+sudo mkdir /data
+sudo mkdir /data/db
+sudo yum install thunar
+sudo system-switch-displaymanager kdm
+sudo yum install google-chrome-stable
+sudo yum install flash-plugin
+sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.0-1.noarch.rpm
+sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
+sudo yum install nspluginwrapper.i686 AdobeReader_enu
+sudo yum groupinstall Office/Productivity
+cd My-work/
+mv .vimrc ~/
+mv .xmobarrc ~/
+mv .xmonad ~/
+mv .xsession ~/
+mv Electronic_art.jpg ~/Pictures/
+cd
+
