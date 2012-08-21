@@ -33,4 +33,4 @@ mv .xmonad ~/
 mv .xsession ~/
 mv Electronic_art.jpg ~/Pictures/
 cd
-
+sudo yum install hexedit

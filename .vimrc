@@ -27,7 +27,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
+set history=100		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -96,6 +96,10 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
-set nobackup
-set nowritebackup
+set directory=/tmp  "set directory where backups are written to
+set ai 			"set auto indent
+set ic 			"ignore case when searching
+set number		"see line numbers
+set sm			"show mode, jumps to matching braces 
+set ws 			"searches wrap around either end of file
 colorscheme torte
