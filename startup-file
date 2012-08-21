@@ -13,7 +13,7 @@ sudo yum install gnome-power-manager
 sudo yum install vim
 sudo yum install feh
 sudo yum install git
-git clone https://github.com/oolivo/My-work.git
+git clone https://github.com/oolivo/fedora-setup.git
 sudo yum install mongodb
 sudo yum install mongodb-server
 sudo mkdir /data
@@ -26,7 +26,7 @@ sudo rpm -ivh http://linuxdownload.adobe.com/adobe-release/adobe-release-i386-1.
 sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-adobe-linux
 sudo yum install nspluginwrapper.i686 AdobeReader_enu
 sudo yum groupinstall Office/Productivity
-cd My-work/
+cd fedora-setup/
 mv .vimrc ~/
 mv .xmobarrc ~/
 mv .xmonad ~/
