@@ -27,7 +27,7 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=100		" keep 50 lines of command line history
+set history=1000		" keep 50 lines of command line history
 set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
@@ -95,11 +95,69 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
-
-set directory=/tmp  "set directory where backups are written to
-set ai 			"set auto indent
-set ic 			"ignore case when searching
-set number		"see line numbers
-set sm			"show mode, jumps to matching braces 
-set ws 			"searches wrap around either end of file
+let mapleader =","
+set backupdir=/tmp  		"set directory where backups are written to
+set ai 				"set auto indent
+set ic 				"ignore case when searching
+set sc				"set smartcase, case sensitive if search expression has capital letter
+set number			"see line numbers
+set sm				"show mode, jumps to matching braces 
+set ws 				"searches wrap around either end of file
+set hidden			"current buffer can be set to background without writing to disk.
 colorscheme torte
+set wildmenu			"lets you see autocomplete options
+set wildignore=.o,*~,*.pyc	"ignore compiled files in menu
+runtime macros/matchit.vim	"lets % key jump from matching braces to matching braces in if/elsif etc..
+set title			"allows differentiation between VIM and shells. Useful when not tiling
+set scrolloff=7			"follow the cursor by a 3 line margin when near the bottom or top of the screen (way better than going 1 line)
+set smarttab			"edge case to handle tabs after carriage returns	
+set magic			"for regular expression use magic
+set background=dark
+set wrap			"sets linewrapping
+set undolevels=1000		"number of undo's
+set laststatus=2  "Always show the status line
+set diffopt=filler,iwhite       " ignore all whitespace and sync for diffs
+
+
+
+"turn off search highlighting temporarily
+nmap <silent> <leader>n :silent :nohlsearch<CR>
+
+"allows * to search for selected text block
+vnoremap <silent> * :call VisualSelection('f')<CR> 
+
+"Treat long lines as break lines
+map j gj
+map k gk
+
+"Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+"Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+"Remember info about open buffers on close
+set viminfo^=%
+
+
+" Delete trailing white space on save, useful for Python and CoffeeScript ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+" Pressing ,ss will toggle and untoggle spell checking
+map <leader>ss :setlocal spell!<cr>
+
+" ,+p pastes buffers
+nmap <LocalLeader>p i<S-MiddleMouse><ESC>
+imap <S-Insert> <S-MiddleMouse>
+cmap <S-Insert> <S-MiddleMouse>
