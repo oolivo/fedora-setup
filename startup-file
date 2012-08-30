@@ -2,7 +2,6 @@
 sudo yum install eclipse
 sudo yum install python
 sudo yum install django
-sudo yum install Django
 sudo yum install xmonad
 sudo yum install xmobar
 sudo yum install gcc
@@ -16,8 +15,7 @@ sudo yum install git
 git clone https://github.com/oolivo/fedora-setup.git
 sudo yum install mongodb
 sudo yum install mongodb-server
-sudo mkdir /data
-sudo mkdir /data/db
+sudo mkdir -p /data/db
 sudo yum install thunar
 sudo system-switch-displaymanager kdm
 sudo yum install google-chrome-stable
