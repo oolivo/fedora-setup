@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 sudo yum install eclipse
 sudo yum install python
 sudo yum install django
