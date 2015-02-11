@@ -117,7 +117,7 @@ set wrap			"sets linewrapping
 set undolevels=1000		"number of undo's
 set laststatus=2  "Always show the status line
 set diffopt=filler,iwhite       " ignore all whitespace and sync for diffs
-
+set paste
 
 
 "turn off search highlighting temporarily
